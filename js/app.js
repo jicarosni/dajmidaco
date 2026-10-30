@@ -7,6 +7,10 @@
   const askBtns = $('askBtns'), done = $('done'), doneText = $('doneText'), againBtn = $('againBtn');
   const histList = $('historyList'), muteBtn = $('muteBtn');
   const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const dre = $('dre'), dreNext = $('dreNext');
+  // skrytý testovací háčik: ?force=osiris → najbližšie točenie padne na danú výhru
+  let forceId = null;
+  try { forceId = new URLSearchParams(location.search).get('force'); } catch (e) {}
 
   // preload obrázkov
   P.forEach(p => { const i = new Image(); i.src = p.img; });
@@ -59,6 +63,7 @@
   function spin() {
     if (spinning) return;
     Sound.unlock();
+    Sound.beatStop(); hideDre();
     spinning = true;
     spinBtn.disabled = true; lever.classList.add('pulled');
     setTimeout(() => lever.classList.remove('pulled'), 500);
@@ -70,6 +75,7 @@
     // zachovaj momentálne viditeľné 3 dlaždice navrchu, aby to neskákalo
     const keep = [seq[restIndex - 1], seq[restIndex], seq[restIndex + 1]];
     let target; do { target = rnd(P.length); } while (P.length > 1 && target === lastIdx && rnd(3) > 0);
+    if (forceId) { const fi = P.findIndex(p => p.id === forceId); if (fi >= 0) target = fi; forceId = null; }
     lastIdx = target;
     const loops = reduced ? 8 : 34 + rnd(12);
     const rest = buildStrip(0, loops);
@@ -119,8 +125,60 @@
     Confetti.burst(current.big ? 220 : 120, r.left + r.width / 2, r.top + r.height / 2);
     if (current.big) { Confetti.rain(30); Sound.jackpot(); } else Sound.win();
     addHistory(current, null);
-    setTimeout(openAsk, reduced ? 300 : 1300);
+    if (current.id === 'osiris') setTimeout(showDre, reduced ? 300 : 1000);
+    else setTimeout(openAsk, reduced ? 300 : 1300);
   }
+
+  // ---------- Dr. Dre moment: Osiris D3 → beat, fotka Stenlyho a pixelové okuliare ----------
+  // pixelové „deal with it" okuliare (26 × 5 políčok), # = čierna, w = biely odlesk
+  const GLASSES = [
+    '##########################',
+    '..#ww#######..#ww#######..',
+    '..##ww######..##ww######..',
+    '...########....########...',
+    '....######......######....'
+  ];
+  (function drawGlasses() {
+    let r = '';
+    GLASSES.forEach((row, y) => {
+      for (let x = 0; x < row.length; x++) {
+        const ch = row[x]; if (ch === '.') continue;
+        r += '<rect x="' + x + '" y="' + y + '" width="1.02" height="1.02" fill="' + (ch === 'w' ? '#fff' : '#000') + '"/>';
+      }
+    });
+    $('dreGlasses').innerHTML = '<svg viewBox="0 0 26 5" xmlns="http://www.w3.org/2000/svg" shape-rendering="crispEdges">' + r + '</svg>';
+  })();
+  let dreTimers = [];
+  function clearDreTimers() { dreTimers.forEach(clearTimeout); dreTimers = []; }
+  function showDre() {
+    clearDreTimers();
+    dre.classList.remove('play', 'landed', 'show');
+    dre.hidden = false;
+    void dre.offsetWidth;                                 // reštart CSS animácie
+    dre.classList.add('show', 'play');
+    Sound.scratch();
+    Sound.beatStart();
+    const land = reduced ? 200 : 2400;                    // okuliare dopadnú ~2,4 s
+    dreTimers.push(setTimeout(() => {
+      dre.classList.add('landed');
+      dreNext.focus({ preventScroll: true });
+    }, land));
+    dreTimers.push(setTimeout(continueFromDre, land + 4500)); // samo pokračuje po ~7 s
+  }
+  function hideDre() {
+    clearDreTimers();
+    if (dre.hidden) return;
+    dre.classList.remove('show', 'play', 'landed');
+    dre.hidden = true;
+  }
+  function continueFromDre() {
+    if (dre.hidden) return;
+    hideDre();
+    openAsk();                                            // beat hrá ďalej, kým sa dialóg nezavrie
+  }
+  dreNext.addEventListener('click', continueFromDre);
+  dre.addEventListener('keydown', (e) => { if (e.key === 'Escape') { e.preventDefault(); continueFromDre(); } });
+  new Image().src = 'img/stenly.jpg';
 
   // ---------- Dialóg „Stenly, dám ti dačo?" ----------
   let dodgesLeft = 0, answered = false, lastDodge = 0;
@@ -141,6 +199,7 @@
     setTimeout(() => noBtn.focus({ preventScroll: true }), 50);
   }
   function closeAsk() {
+    Sound.beatStop();
     overlay.classList.remove('show');
     resetYes();
     setTimeout(() => { overlay.hidden = true; }, 200);
@@ -265,7 +324,7 @@
   spinBtn.addEventListener('click', spin);
   lever.addEventListener('click', spin);
   document.addEventListener('keydown', (e) => {
-    if (e.code === 'Space' && overlay.hidden && document.activeElement === document.body) { e.preventDefault(); spin(); }
+    if (e.code === 'Space' && overlay.hidden && dre.hidden && document.activeElement === document.body) { e.preventDefault(); spin(); }
   });
   function drawMute() { const m = Sound.isMuted(); muteBtn.textContent = m ? '🔇' : '🔊'; muteBtn.setAttribute('aria-pressed', m ? 'true' : 'false'); muteBtn.title = m ? 'Zapnúť zvuk' : 'Stlmiť zvuk'; }
   muteBtn.addEventListener('click', () => { Sound.setMuted(!Sound.isMuted()); drawMute(); });
@@ -276,5 +335,6 @@
   bulbs.innerHTML = Array.from({ length: 22 }, (_, i) => '<i style="--i:' + i + '"></i>').join('');
 
   // pre testy
-  window.__dmd = { get dodgesLeft() { return dodgesLeft; }, get current() { return current; }, get spinning() { return spinning; } };
+  window.__dmd = { get dodgesLeft() { return dodgesLeft; }, get current() { return current; }, get spinning() { return spinning; },
+    get beatPlaying() { return Sound.beatPlaying(); }, forceNext(id) { forceId = id; }, showDre };
 })();

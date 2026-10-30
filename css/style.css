@@ -193,3 +193,54 @@ body {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; animation-iteration-count: 1 !important; }
 }
+
+/* ---------- Dr. Dre moment (Osiris D3) ---------- */
+.dre {
+  position: fixed; inset: 0; z-index: 1100; overflow: hidden;
+  display: flex; align-items: center; justify-content: center; padding: 12px;
+  background: radial-gradient(800px 600px at 50% 30%, #3b2a00 0%, #120a00 55%, #000 100%);
+  opacity: 0; transition: opacity .25s;
+}
+.dre.show { opacity: 1; }
+.dre-lights { position: absolute; inset: -20%; pointer-events: none; opacity: .55;
+  background:
+    conic-gradient(from 200deg at 15% 0%, transparent 0 20deg, rgba(255,225,77,.35) 25deg 32deg, transparent 38deg),
+    conic-gradient(from 130deg at 85% 0%, transparent 0 20deg, rgba(255,43,214,.3) 25deg 32deg, transparent 38deg);
+  animation: dreSweep 2.6s ease-in-out infinite alternate; }
+@keyframes dreSweep { to { transform: rotate(4deg) scale(1.05); } }
+.dre-stage { position: relative; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+/* kontajner drží pomer strán fotky (424×800), okuliare sú v % voči nemu */
+.dre-photo {
+  position: relative; aspect-ratio: 424 / 800;
+  width: min(86vw, calc(min(76vh, 680px) * 0.53));
+  border-radius: 14px; box-shadow: 0 0 0 3px var(--yellow), 0 0 40px rgba(255,225,77,.45), 0 20px 50px rgba(0,0,0,.7);
+  transform-origin: 60% 14%;
+}
+.dre-photo > img { display: block; width: 100%; height: 100%; border-radius: 14px; user-select: none; -webkit-user-select: none; }
+.dre.show .dre-photo { animation: dreNod .652s ease-in-out infinite; }   /* 92 BPM */
+@keyframes dreNod { 0%, 100% { transform: translateY(0) rotate(0) } 18% { transform: translateY(1.4%) rotate(.8deg) } 50% { transform: translateY(0) rotate(0) } }
+
+/* oči: stred medzi očami ≈ 60,6 % × 13,2 % fotky, hlava mierne naklonená doprava */
+.dre-glasses { position: absolute; left: 60.6%; top: 13.2%; width: 17%; transform: translate(-50%, -50%) rotate(3deg); pointer-events: none; }
+.dre-glasses svg { display: block; width: 100%; height: auto; image-rendering: pixelated; filter: drop-shadow(0 2px 2px rgba(0,0,0,.45)); transform: translateY(-140vh); }
+.dre.play .dre-glasses svg { animation: dreDrop 1.5s .9s cubic-bezier(.55,0,1,.45) forwards; }
+@keyframes dreDrop {
+  0%   { transform: translateY(-140vh); }
+  72%  { transform: translateY(0); animation-timing-function: cubic-bezier(0,.55,.45,1); }
+  82%  { transform: translateY(-55%); animation-timing-function: cubic-bezier(.55,0,1,.45); }
+  91%  { transform: translateY(0); animation-timing-function: cubic-bezier(0,.55,.45,1); }
+  96%  { transform: translateY(-15%); animation-timing-function: cubic-bezier(.55,0,1,.45); }
+  100% { transform: translateY(0); }
+}
+.dre-caption { position: absolute; left: 0; right: 0; bottom: 4%; text-align: center; pointer-events: none;
+  opacity: 0; transform: scale(.6); transition: opacity .3s, transform .4s cubic-bezier(.2,1.6,.4,1); }
+.dre.landed .dre-caption { opacity: 1; transform: none; }
+.dre-cap { margin: 0; font-family: "Arial Black", Impact, sans-serif; font-weight: 900; font-size: clamp(1.6rem, 7vw, 2.6rem);
+  color: #fff8d0; text-shadow: 0 0 6px #000, 0 0 14px var(--yellow), 0 3px 0 #000; }
+.dre-sub { margin: 2px 0 0; font-family: "Courier New", ui-monospace, monospace; font-weight: 900; letter-spacing: 4px;
+  font-size: clamp(.95rem, 4vw, 1.3rem); color: #fff; background: #000; display: inline-block; padding: 3px 10px; }
+.dre-next { width: auto; min-width: 220px; margin: 0; opacity: 0; transform: translateY(10px); transition: opacity .3s, transform .3s; pointer-events: none; }
+.dre.landed .dre-next { opacity: 1; transform: none; pointer-events: auto; }
+@media (prefers-reduced-motion: reduce) {
+  .dre.play .dre-glasses svg { animation: none; transform: none; }
+}

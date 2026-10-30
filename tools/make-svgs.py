@@ -85,7 +85,7 @@ S['slivovica'] = wrap('#e9d8ff', '#5a2ca0', '''
 <path d="M64 120 H136 V170 Q136 176 130 176 H70 Q64 176 64 170 Z" fill="#fff8e1" opacity=".9"/>
 <rect x="72" y="104" width="56" height="40" rx="5" fill="#fff" stroke="#263238" stroke-width="3"/>
 <text x="100" y="122" font-family="Arial Black,Arial,sans-serif" font-size="11" text-anchor="middle" fill="#5a2ca0">SLIVOVICA</text>
-<text x="100" y="137" font-family="Arial,sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#263238">od dedka 52%</text>
+<text x="100" y="137" font-family="Arial,sans-serif" font-size="10" font-weight="700" text-anchor="middle" fill="#263238">pálenie DIY</text>
 <ellipse cx="150" cy="150" rx="20" ry="22" fill="#5e2b97" stroke="#2a0b4d" stroke-width="4"/><path d="M150 128 q6 -12 16 -12" stroke="#3e2723" stroke-width="4" fill="none"/><path d="M158 118 q10 -6 16 2 q-10 6 -16 -2z" fill="#43a047"/>
 <path d="M72 70 q-4 20 0 40" stroke="#fff" stroke-width="5" fill="none" opacity=".8"/>''')
 # Kofola na celý život
@@ -117,7 +117,7 @@ S['zemiaky'] = wrap('#f1e3c6', '#8b6b3d', '''
 <g fill="#c89b5d" stroke="#5c3d1a" stroke-width="3"><ellipse cx="80" cy="62" rx="16" ry="12"/><ellipse cx="118" cy="58" rx="18" ry="12"/><ellipse cx="100" cy="50" rx="14" ry="10"/></g>
 <g fill="#5c3d1a"><circle cx="76" cy="60" r="1.8"/><circle cx="122" cy="56" r="1.8"/><circle cx="102" cy="48" r="1.8"/></g>
 <text x="100" y="128" font-family="Arial Black,Arial,sans-serif" font-size="18" text-anchor="middle" fill="#4e3418">25 kg</text>
-<text x="100" y="150" font-family="Arial,sans-serif" font-weight="700" font-size="12" text-anchor="middle" fill="#4e3418">od babky ♥</text>''')
+<text x="100" y="150" font-family="Arial,sans-serif" font-weight="700" font-size="12" text-anchor="middle" fill="#4e3418">vykop si sám</text>''')
 # Ponožky do sandálov
 S['ponozky-sandale'] = wrap('#e0f7e9', '#2a9d8f', '''
 <path d="M70 30 V110 Q70 130 50 140 Q30 150 40 168 Q50 182 80 172 L108 160 Q118 154 118 140 V30 Z" fill="#fff" stroke="#16423c" stroke-width="5"/>

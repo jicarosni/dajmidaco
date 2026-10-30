@@ -15,9 +15,10 @@ window.PRIZES = [
   { id: 'zemiaky',     name: 'Vrece zemiakov od babky',    sub: '25 kíl a k tomu otázka: „A kedy sa oženíš?"',      img: 'img/zemiaky.svg' },
   { id: 'ponozky',     name: 'Ponožky do sandálov',        sub: 'Letná kolekcia, východniarsky štýl.',              img: 'img/ponozky-sandale.svg' },
   { id: 'lambo',       name: 'Kľúče od Lamborghini',       sub: 'Mierka 1 : 64. Kľúče sú pravé… plastové.',         img: 'img/lambo-hracka.svg' },
-  { id: 'selfie',      name: 'Selfie s Jicom',             sub: 'Limitovaná edícia, podpis zadarmo.',               img: 'img/selfie-jic.svg' },
+  { id: 'selfie',      name: 'Selfie s Marošom',           sub: 'Limitovaná edícia, podpis zadarmo.',               img: 'img/selfie-jic.svg' },
   { id: 'retaz',       name: 'Zlatá reťaz z Tesca',        sub: '14 karátov… plastu. Ale ligoce sa!',              img: 'img/zlata-retaz.svg' },
   { id: 'bicykel',     name: 'Bicykel bez sedla',          sub: 'Jazdíš postojačky. Je to kardio.',                 img: 'img/bicykel.svg' },
-  { id: 'pivo-jic',    name: 'Pivo na účet Jica',          sub: 'Jic o tom ešte nevie. Psst.',                      img: 'img/pivo-jic.svg' },
+  { id: 'pivo-jic',    name: 'Pivo na účet Ľuboša',        sub: 'Ľuboš o tom ešte nevie. Psst.',                      img: 'img/pivo-jic.svg' },
+  { id: 'martin',      name: 'Martin ti umyje riad',       sub: 'Celý týždeň. Martin súhlasil. Asi.',               img: 'img/martin-riad.svg' },
   { id: 'umyvanie',    name: 'Umytie auta',                sub: 'Ručne a dôkladne. Umývaš ty.',                     img: 'img/umyvanie-auta.svg' }
 ];

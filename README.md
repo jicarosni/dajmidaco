@@ -13,7 +13,7 @@ Výherný automat pre **Stenlyho**. Stlačíš **ZATOČ!** (alebo potiahneš pá
 - responzívne (mobil aj desktop), favicon, `prefers-reduced-motion`
 
 ## Výhry
-Ty daj mne dačo · Audi za 5 eur · Topánky Osiris D3 💎 · Rekes piva Pilsner Urquell 💎 · Bryndzové halušky navždy · Nič, ale s láskou · Lístok na hokej · Starý Favorit bez STK · Objatie od suseda · Fľaša slivovice od dedka · Kofola na celý život · Víkend na chate v Tatrách · Vrece zemiakov od babky · Ponožky do sandálov · Kľúče od Lamborghini · Selfie s Jicom · Zlatá reťaz z Tesca · Bicykel bez sedla · Pivo na účet Jica · Umytie auta
+Ty daj mne dačo · Audi za 5 eur · Topánky Osiris D3 💎 · Rekes piva Pilsner Urquell 💎 · Bryndzové halušky navždy · Nič, ale s láskou · Lístok na hokej · Starý Favorit bez STK · Objatie od suseda · Fľaša slivovice od dedka · Kofola na celý život · Víkend na chate v Tatrách · Vrece zemiakov od babky · Ponožky do sandálov · Kľúče od Lamborghini · Selfie s Marošom · Zlatá reťaz z Tesca · Bicykel bez sedla · Pivo na účet Ľuboša · Martin ti umyje riad · Umytie auta
 
 Pridať / zmeniť výhru: uprav `js/prizes.js` (názov, vtipný podtitul, obrázok v `img/`).
 

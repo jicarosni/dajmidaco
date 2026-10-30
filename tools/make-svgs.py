@@ -135,7 +135,7 @@ S['lambo-hracka'] = wrap('#fff6a8', '#e0a800', '''
 <circle cx="70" cy="58" r="22" fill="none" stroke="#9e9e9e" stroke-width="8"/>
 <path d="M90 64 L150 80 L146 92 L138 88 L134 98 L126 94 L122 102 L86 76 Z" fill="#bdbdbd" stroke="#424242" stroke-width="4"/>
 <text x="100" y="188" font-family="Arial Black,Arial,sans-serif" font-size="13" text-anchor="middle" fill="#4a2c00">1 : 64</text>''')
-# Selfie s Jicom
+# Selfie s Marošom
 S['selfie-jic'] = wrap('#d7f5ff', '#00a6c8', '''
 <rect x="50" y="22" width="100" height="160" rx="16" fill="#263238" stroke="#0b1418" stroke-width="5"/>
 <rect x="58" y="38" width="84" height="124" rx="6" fill="#80deea"/>
@@ -161,14 +161,14 @@ S['bicykel'] = wrap('#ffe3f1', '#c2185b', '''
 <g fill="none" stroke="#e91e63" stroke-width="8"><path d="M55 130 L85 82 L130 82 L145 130 M85 82 L100 130 L55 130 M100 130 L130 82"/><path d="M130 82 L124 62 H142"/><path d="M85 82 L80 66"/></g>
 <text x="80" y="54" font-family="Arial Black,Arial,sans-serif" font-size="28" text-anchor="middle" fill="#1a1a2e">?</text>
 <circle cx="100" cy="130" r="7" fill="#1a1a2e"/>''')
-# Pivo na účet Jica (krígeľ)
+# Pivo na účet Ľuboša (krígeľ)
 S['pivo-jic'] = wrap('#fff4c2', '#e09f00', '''
 <path d="M140 76 Q176 76 176 112 Q176 146 140 146" fill="none" stroke="#795548" stroke-width="12"/>
 <rect x="44" y="60" width="100" height="120" rx="12" fill="#ffb300" stroke="#5d3a00" stroke-width="6"/>
 <g fill="#fff3d0" opacity=".7"><rect x="58" y="78" width="10" height="90" rx="5"/><rect x="118" y="78" width="10" height="90" rx="5"/></g>
 <path d="M38 64 Q40 36 64 42 Q72 22 96 32 Q116 18 132 38 Q154 36 150 64 Z" fill="#fff" stroke="#c9b48a" stroke-width="4"/>
 <g fill="#fff"><circle cx="90" cy="110" r="4"/><circle cx="100" cy="140" r="3"/><circle cx="84" cy="150" r="3"/></g>
-<text x="94" y="198" font-family="Arial Black,Arial,sans-serif" font-size="13" text-anchor="middle" fill="#5d3a00">PLATÍ JIC</text>''')
+<text x="94" y="198" font-family="Arial Black,Arial,sans-serif" font-size="13" text-anchor="middle" fill="#5d3a00">PLATÍ ĽUBOŠ</text>''')
 # Výlet do Bardejova / Kúpele
 S['umyvanie-auta'] = wrap('#d6f0ff', '#1e88e5', '''
 <path d="M30 140 L40 112 Q48 100 64 98 L80 80 H128 L146 98 Q170 100 172 120 V140 Z" fill="#ef476f" stroke="#4a0d1e" stroke-width="5"/>

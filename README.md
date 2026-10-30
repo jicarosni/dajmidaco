@@ -9,7 +9,8 @@ Výherný automat pre **Stenlyho**. Stlačíš **ZATOČ!** (alebo potiahneš pá
 - konfety, pri „diamantových" výhrach (Osiris D3, rekes Pilsnera) jackpot dážď
 - zvuky cez WebAudio (bez súborov), tlačidlo 🔊/🔇 si pamätá nastavenie
 - utekajúce **Áno**: na počítači uskočí, keď sa k nemu priblíži myš; na mobile uskočí pri dotyku (touchstart), takže sa nedá „trafiť"; aj klávesnica (Enter) ho najprv odpáli
-- **Dr. Dre moment**: keď padnú topánky Osiris D3, pustí sa vlastný G-funk beat (WebAudio, 92 BPM, ~10 s slučka), ukáže sa fotka Stenlyho a na oči mu zletia pixelové „deal with it" okuliare; potom tlačidlo **Pokračovať** (alebo samo po ~7 s). Beat hrá, kým sa dialóg nezavrie. Test: `?force=osiris` – najbližšie točenie padne na Osiris
+- **úvodná obrazovka**: pred prvým točením je všetko rozmazané a výhry nie sú ani v DOM (valec ukazuje „?", história sa skryje); vidno len **ZATOČ!**. Po stlačení sa rozmazanie plynulo stratí a ďalej sa hrá normálne
+- **Dr. Dre moment**: keď padnú topánky Osiris D3, pustí sa vlastný G-funk beat (WebAudio, 92 BPM, ~10 s slučka), ukáže sa fotka Stenlyho a na oči mu zletia pixelové „deal with it" okuliare a vedľa (na mobile cez fotku) vyskočia topánky Osiris D3; potom tlačidlo **Pokračovať** (alebo samo po ~7 s). Beat hrá, kým sa dialóg nezavrie. Test: `?force=osiris` – najbližšie točenie padne na Osiris
 - história posledných 10 točení (v `localStorage`) s tým, či Stenly prijal ✅ alebo odmietol ❌
 - responzívne (mobil aj desktop), favicon, `prefers-reduced-motion`
 

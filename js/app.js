@@ -8,6 +8,8 @@
   const histList = $('historyList'), muteBtn = $('muteBtn');
   const reduced = window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches;
   const dre = $('dre'), dreNext = $('dreNext');
+  const startLock = $('startLock'), startBtn = $('startBtn');
+  let locked = document.body.classList.contains('locked');
   // skrytý testovací háčik: ?force=osiris → najbližšie točenie padne na danú výhru
   let forceId = null;
   try { forceId = new URLSearchParams(location.search).get('force'); } catch (e) {}
@@ -38,7 +40,8 @@
     return seq;
   }
   function render(keepTop) {
-    strip.innerHTML = seq.map(i => tileHTML(P[i])).join('');
+    // pred prvým točením žiadne názvy ani obrázky výhier v DOM (nedá sa to prečítať ani cez rozmazanie)
+    strip.innerHTML = locked ? seq.map(() => '<div class="tile mystery" aria-hidden="true">?</div>').join('') : seq.map(i => tileHTML(P[i])).join('');
     measure();
   }
   function measure() {
@@ -63,6 +66,7 @@
   function spin() {
     if (spinning) return;
     Sound.unlock();
+    unlock();
     Sound.beatStop(); hideDre();
     spinning = true;
     spinBtn.disabled = true; lever.classList.add('pulled');
@@ -308,6 +312,7 @@
   function addHistory(p, ans) { hist.unshift({ id: p.id, t: Date.now(), a: ans }); hist = hist.slice(0, 10); saveHist(); drawHist(); }
   function markHistory(a) { if (hist[0]) hist[0].a = a; saveHist(); drawHist(); }
   function drawHist() {
+    if (locked) { histList.innerHTML = '<li class="empty">Najprv zatoč. 🤫</li>'; return; }
     if (!hist.length) { histList.innerHTML = '<li class="empty">Zatiaľ nič. Ako u nás na úrade.</li>'; return; }
     histList.innerHTML = hist.map(h => {
       const p = P.find(x => x.id === h.id); if (!p) return '';
@@ -319,6 +324,19 @@
   }
   $('clearHistory').addEventListener('click', () => { hist = []; saveHist(); drawHist(); });
   drawHist();
+
+  // ---------- Úvodná zámka (rozmazané, kým Stenly nezatočí) ----------
+  function unlock() {
+    if (!locked) return;
+    locked = false;
+    document.body.classList.remove('locked');
+    startLock.classList.add('gone');
+    setTimeout(() => { startLock.hidden = true; }, 650);
+    drawHist();
+  }
+  startBtn.addEventListener('click', spin);
+  if (!locked) startLock.hidden = true;
+  else setTimeout(() => startBtn.focus({ preventScroll: true }), 50);
 
   // ---------- Ovládanie ----------
   spinBtn.addEventListener('click', spin);
@@ -335,6 +353,6 @@
   bulbs.innerHTML = Array.from({ length: 22 }, (_, i) => '<i style="--i:' + i + '"></i>').join('');
 
   // pre testy
-  window.__dmd = { get dodgesLeft() { return dodgesLeft; }, get current() { return current; }, get spinning() { return spinning; },
+  window.__dmd = { get dodgesLeft() { return dodgesLeft; }, get current() { return current; }, get spinning() { return spinning; }, get locked() { return locked; },
     get beatPlaying() { return Sound.beatPlaying(); }, forceNext(id) { forceId = id; }, showDre };
 })();

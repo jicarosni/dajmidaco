@@ -13,7 +13,7 @@
 <meta property="og:image" content="img/pilsner-urquell-rekes.jpg">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body class="locked">
 <canvas id="confetti" aria-hidden="true"></canvas>
 <div class="bg-lights" aria-hidden="true"></div>
 
@@ -68,19 +68,25 @@
   </div>
 </div>
 
-<div class="dre" id="dre" role="dialog" aria-modal="true" aria-labelledby="dreCap" hidden>
+<div class="dre" id="dre" role="dialog" aria-modal="true" aria-label="Topánky Osiris D3 – deal with it" hidden>
   <div class="dre-lights" aria-hidden="true"></div>
   <div class="dre-stage">
+   <div class="dre-row">
     <div class="dre-photo" id="drePhoto">
       <img src="img/stenly.jpg" alt="Stenly s basgitarou" width="424" height="800" draggable="false">
       <div class="dre-glasses" id="dreGlasses" aria-hidden="true"></div>
       <div class="dre-caption">
-        <p class="dre-cap" id="dreCap">Stenly D3 😎</p>
         <p class="dre-sub">DEAL WITH IT</p>
       </div>
     </div>
+    <div class="dre-shoes" id="dreShoes"><img src="img/osiris-d3.jpg" alt="Topánky Osiris D3" width="600" height="600" draggable="false"></div>
+   </div>
     <button id="dreNext" class="spin small dre-next" type="button">Pokračovať</button>
   </div>
+</div>
+
+<div class="start-lock" id="startLock">
+  <button id="startBtn" class="spin start-btn" type="button">ZATOČ!</button>
 </div>
 
 <script src="js/prizes.js"></script>

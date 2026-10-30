@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+<defs><radialGradient id="bg" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#e6ffd1"/><stop offset="1" stop-color="#5f8f3a"/></radialGradient></defs>
+<rect width="200" height="200" fill="url(#bg)"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M25 132 V108 L45 104 L62 74 H132 L152 104 L178 108 V132 Z" fill="#e8d44d" stroke="#3a3000" stroke-width="5"/>
+<path d="M70 82 H96 V102 H58 Z M104 82 H128 L142 102 H104 Z" fill="#a9d6ff" stroke="#3a3000" stroke-width="4"/>
+<g fill="#a0522d" opacity=".85"><circle cx="48" cy="120" r="6"/><circle cx="60" cy="126" r="4"/><circle cx="150" cy="118" r="7"/><circle cx="120" cy="125" r="4"/></g>
+<circle cx="58" cy="134" r="16" fill="#222" stroke="#000" stroke-width="4"/><circle cx="148" cy="134" r="16" fill="#222" stroke="#000" stroke-width="4"/>
+<circle cx="58" cy="134" r="5" fill="#999"/><circle cx="148" cy="134" r="5" fill="#999"/>
+<path d="M170 100 q12 -20 4 -36 q14 10 8 30" fill="#999" opacity=".6"/>
+<g transform="rotate(12 150 45)"><circle cx="150" cy="45" r="26" fill="#fff" stroke="#c1121f" stroke-width="6"/>
+<text x="150" y="51" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="15" text-anchor="middle" fill="#c1121f">STK</text>
+<line x1="132" y1="27" x2="168" y2="63" stroke="#c1121f" stroke-width="6"/></g></g>
+</svg>

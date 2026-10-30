@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+<defs><radialGradient id="bg" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#ffe0e0"/><stop offset="1" stop-color="#b71c1c"/></radialGradient></defs>
+<rect width="200" height="200" fill="url(#bg)"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M55 50 H145 L132 178 H68 Z" fill="#fff" fill-opacity=".35" stroke="#3e0a0a" stroke-width="5"/>
+<path d="M60 78 H140 L130 172 H70 Z" fill="#4a1c0c"/>
+<rect x="58" y="70" width="84" height="12" rx="3" fill="#f5deb3"/>
+<g fill="#fff" opacity=".75"><circle cx="85" cy="110" r="4"/><circle cx="110" cy="130" r="3"/><circle cx="95" cy="150" r="3"/><circle cx="120" cy="100" r="2.5"/></g>
+<rect x="66" y="96" width="22" height="18" rx="3" fill="#bfe9ff" opacity=".8" transform="rotate(-12 77 105)"/>
+<rect x="108" y="112" width="20" height="16" rx="3" fill="#bfe9ff" opacity=".8" transform="rotate(14 118 120)"/>
+<path d="M118 20 L108 90" stroke="#e53935" stroke-width="8"/>
+<path d="M118 20 L140 12" stroke="#e53935" stroke-width="8"/>
+<text x="100" y="196" font-family="Arial Black,Arial,sans-serif" font-size="14" text-anchor="middle" fill="#fff">∞ LITROV</text></g>
+</svg>

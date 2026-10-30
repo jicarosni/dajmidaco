@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+<defs><radialGradient id="bg" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#9be7ff"/><stop offset="1" stop-color="#2363c9"/></radialGradient></defs>
+<rect width="200" height="200" fill="url(#bg)"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M22 130 L30 105 Q40 90 60 88 L78 70 Q85 64 98 64 L132 64 Q145 64 152 72 L168 90 Q182 94 182 110 L182 130 Z" fill="#d9dde3" stroke="#1b2333" stroke-width="5"/>
+<path d="M84 74 L100 72 L100 90 L68 90 Z M108 72 L130 72 Q138 72 144 80 L152 90 L108 90 Z" fill="#7fc4ff" stroke="#1b2333" stroke-width="4"/>
+<circle cx="58" cy="132" r="18" fill="#222" stroke="#000" stroke-width="4"/><circle cx="58" cy="132" r="7" fill="#aaa"/>
+<circle cx="150" cy="132" r="18" fill="#222" stroke="#000" stroke-width="4"/><circle cx="150" cy="132" r="7" fill="#aaa"/>
+<g fill="none" stroke="#1b2333" stroke-width="3"><circle cx="84" cy="112" r="7"/><circle cx="94" cy="112" r="7"/><circle cx="104" cy="112" r="7"/><circle cx="114" cy="112" r="7"/></g>
+<g transform="rotate(-14 150 40)"><path d="M112 22 H180 V58 H112 L100 40 Z" fill="#ffe14d" stroke="#5a4400" stroke-width="4"/><circle cx="112" cy="40" r="4" fill="#5a4400"/>
+<text x="146" y="50" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="26" text-anchor="middle" fill="#c1121f">5 €</text></g></g>
+</svg>

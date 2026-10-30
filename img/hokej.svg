@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+<defs><radialGradient id="bg" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#c8f1ff"/><stop offset="1" stop-color="#0b5ea8"/></radialGradient></defs>
+<rect width="200" height="200" fill="url(#bg)"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<g transform="rotate(-10 100 100)">
+<path d="M30 65 H170 V88 a12 12 0 0 0 0 24 V135 H30 V112 a12 12 0 0 0 0 -24 Z" fill="#fff" stroke="#08355e" stroke-width="5"/>
+<line x1="128" y1="68" x2="128" y2="132" stroke="#08355e" stroke-width="3" stroke-dasharray="6 5"/>
+<text x="78" y="96" font-family="Arial Black,Arial,sans-serif" font-weight="900" font-size="18" text-anchor="middle" fill="#c1121f">HOKEJ</text>
+<text x="78" y="120" font-family="Arial,sans-serif" font-weight="700" font-size="13" text-anchor="middle" fill="#08355e">SVK : CZE</text>
+<text x="149" y="105" font-family="Arial,sans-serif" font-weight="700" font-size="12" text-anchor="middle" fill="#08355e" transform="rotate(90 149 100)">VIP</text></g>
+<path d="M40 170 L80 150 L150 150" stroke="#3b2a1a" stroke-width="9" fill="none"/>
+<ellipse cx="160" cy="168" rx="16" ry="6" fill="#111"/></g>
+</svg>

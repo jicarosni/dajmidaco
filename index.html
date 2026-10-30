@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="sk">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Daj mi dačo</title>
+<meta name="description" content="Výherný automat pre Stenlyho. Zatoč a vyhraj dačo!">
+<meta name="theme-color" content="#14002b">
+<link rel="icon" href="favicon.svg" type="image/svg+xml">
+<link rel="apple-touch-icon" href="img/apple-touch-icon.png">
+<meta property="og:title" content="Daj mi dačo 🎰">
+<meta property="og:description" content="Stenly, zatoč a vyhraj dačo!">
+<meta property="og:image" content="img/pilsner-urquell-rekes.jpg">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<canvas id="confetti" aria-hidden="true"></canvas>
+<div class="bg-lights" aria-hidden="true"></div>
+
+<header class="top">
+  <h1 class="logo"><span class="neon-pink">Daj mi</span> <span class="neon-yellow">dačo</span></h1>
+  <p class="tag">Výherný automat pre <strong>Stenlyho</strong>. Bez rizika, bez výhry… možno.</p>
+  <button id="muteBtn" class="mute" type="button" aria-pressed="false" title="Zvuk">🔊</button>
+</header>
+
+<main class="stage">
+  <section class="machine" aria-label="Výherný automat">
+    <div class="marquee" aria-hidden="true">
+      <span>★ JACKPOT ★</span>
+    </div>
+    <div class="bulbs" aria-hidden="true"></div>
+    <div class="window">
+      <div class="reel" id="reel"><div class="strip" id="strip"></div></div>
+      <div class="payline" aria-hidden="true"><i></i><i></i></div>
+      <div class="shade top" aria-hidden="true"></div>
+      <div class="shade bottom" aria-hidden="true"></div>
+    </div>
+    <div class="result" id="result" aria-live="polite">Stlač <b>ZATOČ!</b> a uvidíme, čo ti osud nadelí.</div>
+    <button id="spinBtn" class="spin" type="button">ZATOČ!</button>
+    <button id="lever" class="lever" type="button" aria-label="Potiahni páku"><span class="stick"></span><span class="ball"></span></button>
+  </section>
+
+  <aside class="history" aria-label="História">
+    <h2>História točenia</h2>
+    <ol id="historyList"><li class="empty">Zatiaľ nič. Ako u nás na úrade.</li></ol>
+    <button id="clearHistory" class="link" type="button">Vymazať históriu</button>
+  </aside>
+</main>
+
+<footer class="foot">
+  Vyrobené s láskou pre Stenlyho · <a href="https://github.com/jicarosni/dajmidaco">zdroják</a> · fotky: Wikimedia Commons (CC0 / public domain)
+</footer>
+
+<div class="overlay" id="overlay" hidden>
+  <div class="card" id="card" role="dialog" aria-modal="true" aria-labelledby="askTitle">
+    <img id="askImg" class="ask-img" alt="">
+    <p class="ask-prize" id="askPrize"></p>
+    <h2 id="askTitle" class="ask-title">Stenly, dám ti dačo?</h2>
+    <p class="taunt" id="taunt">&nbsp;</p>
+    <div class="ask-btns" id="askBtns">
+      <button id="yesBtn" class="yes" type="button">Áno</button>
+      <button id="noBtn" class="no" type="button">Nie</button>
+    </div>
+    <div class="done" id="done" hidden>
+      <p class="done-text" id="doneText"></p>
+      <button id="againBtn" class="spin small" type="button">Zatoč znova</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/prizes.js"></script>
+<script src="js/sound.js"></script>
+<script src="js/confetti.js"></script>
+<script src="js/app.js"></script>
+</body>
+</html>

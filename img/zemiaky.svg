@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" width="400" height="400">
+<defs><radialGradient id="bg" cx="50%" cy="40%" r="70%"><stop offset="0" stop-color="#f1e3c6"/><stop offset="1" stop-color="#8b6b3d"/></radialGradient></defs>
+<rect width="200" height="200" fill="url(#bg)"/>
+<g stroke-linejoin="round" stroke-linecap="round">
+<path d="M50 70 Q40 120 48 168 Q100 186 152 168 Q160 120 150 70 Q100 82 50 70 Z" fill="#c8a165" stroke="#4e3418" stroke-width="5"/>
+<path d="M50 70 Q100 54 150 70 Q100 86 50 70 Z" fill="#a37a40" stroke="#4e3418" stroke-width="4"/>
+<path d="M88 60 q12 -14 24 0" stroke="#4e3418" stroke-width="5" fill="none"/>
+<g fill="#c89b5d" stroke="#5c3d1a" stroke-width="3"><ellipse cx="80" cy="62" rx="16" ry="12"/><ellipse cx="118" cy="58" rx="18" ry="12"/><ellipse cx="100" cy="50" rx="14" ry="10"/></g>
+<g fill="#5c3d1a"><circle cx="76" cy="60" r="1.8"/><circle cx="122" cy="56" r="1.8"/><circle cx="102" cy="48" r="1.8"/></g>
+<text x="100" y="128" font-family="Arial Black,Arial,sans-serif" font-size="18" text-anchor="middle" fill="#4e3418">25 kg</text>
+<text x="100" y="150" font-family="Arial,sans-serif" font-weight="700" font-size="12" text-anchor="middle" fill="#4e3418">od babky ♥</text></g>
+</svg>
